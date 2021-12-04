@@ -11,7 +11,9 @@ public class MainController {
     private UserRepository userRepository;
 
     @PostMapping(path="/add")
-    public @ResponseBody String addNewUser (@RequestParam String name, @RequestParam String email){
+    public @ResponseBody String addNewUser (
+            @RequestParam String name, @RequestBody String email)
+    {
         User n = new User();
         n.setName(name);
         n.setEmail(email);
